@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Price Predictor</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <div class="title1">Mobile Phone Price Predictor</div>
+    </div>
+
+    <div class="wrapper">
+      <form action="/" method="POST">
+        <!--get input value -->
+        <div class="form">
+          <div class="inputfield">
+            <label for="brand">Brand</label>
+            <div class="custom_select">
+              <select name="brand" id="brand">
+                <option value="" selected hidden>Select</option>
+                <option value="apple">Apple</option>
+                <option value="huawei">Huawei</option>
+                <option value="motorola">Motorola</option>
+                <option value="nokia">Nokia</option>
+                <option value="oneplus">OnePlus</option>
+                <option value="oppo">Oppo</option>
+                <option value="realme">Realme</option>
+                <option value="samsung">Samsung</option>
+                <option value="vivo">Vivo</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="inputfield">
+            <label for="storage">Storage (GB)</label>
+            <input type="text" class="input" name="storage" required />
+          </div>
+
+          <div class="inputfield">
+            <label for="ram">Ram (GB)</label>
+            <input type="text" class="input" name="ram" required />
+          </div>
+
+          <div class="inputfield">
+            <label for="camera">Camera (MP)</label>
+            <div class="custom_select">
+              <select name="camera" id="camera">
+                <option value="" selected hidden>Select</option>
+                <option value="12mp">12 MP</option>
+                <option value="13mp">13 MP</option>
+                <option value="48mp">48 MP</option>
+                <option value="50mp">50 MP</option>
+                <option value="64mp">64 MP</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="inputfield">
+            <label for="screensize">Screen Size (Inches)</label>
+            <input type="text" class="input" name="screensize" required />
+          </div>
+
+          <div class="inputfield">
+            <label for="battery">Battery Capacity (mAh)</label>
+            <input type="text" class="input" name="battery" required />
+          </div>
+
+          <br>
+            <p><b>** Attention - Please add only numerical values (without GB, Inches)</b></p>
+          <br>
+
+
+          <div class="inputfield">
+            <input class="btn" type="submit" value="Predict Price" />
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+      <div class="result">
+        {% if pred != 0 %}
+        <div class="wrapper">
+        <p>Estimated Mobile Phone Price : LKR {{pred}}</p>
+        </div>
+        {% endif %}
+      </div>
+
+
+
+
+    </div>
+  </body>
+</html>
